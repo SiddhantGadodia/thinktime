@@ -1,0 +1,40 @@
+:host { all: initial; }
+
+.card {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 300px;
+  box-sizing: border-box;
+  z-index: 2147483647;
+  border-radius: 16px;
+  overflow: hidden;
+  color: #fff;
+  font: 13px/1.4 -apple-system, "Segoe UI", Roboto, sans-serif;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.12);
+  transform: translateY(16px);
+  opacity: 0;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+.card.in { transform: none; opacity: 1; }
+.inner { padding: 14px 16px 12px; background-image: linear-gradient(rgba(0,0,0,0.12), rgba(0,0,0,0.28)); }
+
+.top { display: flex; justify-content: space-between; align-items: center; font-size: 10.5px; letter-spacing: 0.04em; text-transform: uppercase; opacity: 0.85; }
+.close { all: unset; cursor: pointer; font-size: 18px; line-height: 1; padding: 0 2px; opacity: 0.8; }
+.close:hover { opacity: 1; }
+
+.brand { display: flex; align-items: center; gap: 8px; margin-top: 10px; font-weight: 600; font-size: 13px; }
+.emoji { font-size: 20px; }
+.headline { margin: 6px 0 2px; font-size: 17px; font-weight: 700; line-height: 1.2; }
+.body { margin: 0 0 12px; opacity: 0.9; }
+
+.cta { display: inline-block; background: #fff; color: #111; text-decoration: none; font-weight: 600; padding: 7px 14px; border-radius: 999px; font-size: 12.5px; }
+.cta:hover { filter: brightness(0.93); }
+
+.earn { margin-top: 12px; }
+.earn-row { display: flex; justify-content: space-between; font-size: 11.5px; font-weight: 600; }
+.earn-row .amt { font-variant-numeric: tabular-nums; }
+.bar { margin-top: 5px; height: 4px; border-radius: 4px; background: rgba(255, 255, 255, 0.25); overflow: hidden; }
+.fill { height: 100%; width: 0; background: #fff; border-radius: 4px; transition: width 0.25s linear; }
+.done .fill { background: #86efac; }
+.hint { margin-top: 4px; font-size: 10.5px; opacity: 0.75; }

@@ -1,0 +1,33 @@
+{
+  "name": "thinktime-web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start -p 3000",
+    "settler": "tsx scripts/settler.ts",
+    "simulate": "tsx scripts/simulate.ts",
+    "dev:all": "concurrently -n web,settler -c magenta,cyan \"npm:dev\" \"npm:settler\""
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "next": "^15.5.27",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "viem": "^2.57.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "concurrently": "^10.0.6",
+    "dotenv": "^18.0.7",
+    "postcss": "^8.5.29",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.15",
+    "typescript": "5.9"
+  }
+}

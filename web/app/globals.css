@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  --color-monad: #836ef9;
+  --color-ink: #0b0a12;
+  --color-panel: #14121f;
+  --color-line: #262338;
+}
+
+body {
+  background: radial-gradient(1000px 500px at 50% -10%, rgba(131, 110, 249, 0.18), transparent 70%), #0b0a12;
+  color: #ecebf5;
+  min-height: 100vh;
+}

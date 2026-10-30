@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "ThinkTime",
+  "version": "0.1.0",
+  "description": "Get paid in MON for the sponsored cards you see while AI is thinking. Your prompts never leave your browser.",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://chatgpt.com/*",
+    "https://claude.ai/*",
+    "https://gemini.google.com/*",
+    "http://localhost:3000/*"
+  ],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["https://chatgpt.com/*", "https://claude.ai/*", "https://gemini.google.com/*"],
+      "js": ["sites.js", "classify.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["card.css"],
+      "matches": ["https://chatgpt.com/*", "https://claude.ai/*", "https://gemini.google.com/*"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "ThinkTime",
+    "default_icon": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
+  },
+  "icons": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
+}

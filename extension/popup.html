@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<style>
+  :root { color-scheme: dark; }
+  body { width: 330px; margin: 0; padding: 16px; background: #0b0a12; color: #ecebf5; font: 13px/1.4 -apple-system, "Segoe UI", Roboto, sans-serif; }
+  h1 { font-size: 16px; margin: 0 0 12px; display: flex; align-items: center; justify-content: space-between; }
+  h1 .dot { color: #836ef9; }
+  label { display: block; font-size: 11px; color: #8d8aa5; margin-bottom: 4px; text-transform: uppercase; letter-spacing: .04em; }
+  input[type=text] { width: 100%; box-sizing: border-box; padding: 8px 10px; border-radius: 8px; border: 1px solid #262338; background: #14121f; color: inherit; font: 12px ui-monospace, Consolas, monospace; }
+  input.bad { border-color: #f43f5e; }
+  button { cursor: pointer; border: 0; border-radius: 8px; padding: 8px 12px; font-weight: 600; background: #836ef9; color: #fff; }
+  button.ghost { background: #1d1a2c; color: #ecebf5; }
+  .row { display: flex; gap: 8px; margin-top: 8px; align-items: center; }
+  .msg { font-size: 11px; margin-top: 6px; min-height: 14px; color: #8d8aa5; }
+  .msg.err { color: #fb7185; } .msg.ok { color: #86efac; }
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 16px 0 12px; }
+  .stat { background: #14121f; border: 1px solid #262338; border-radius: 10px; padding: 8px; text-align: center; }
+  .stat b { display: block; font-size: 15px; } .stat span { font-size: 10px; color: #8d8aa5; }
+  h2 { font-size: 11px; color: #8d8aa5; text-transform: uppercase; letter-spacing: .04em; margin: 14px 0 6px; }
+  ul { list-style: none; margin: 0; padding: 0; } li { padding: 5px 0; border-top: 1px solid #262338; display: flex; justify-content: space-between; }
+  a { color: #a99bff; text-decoration: none; font-family: ui-monospace, Consolas, monospace; font-size: 12px; } a:hover { text-decoration: underline; }
+  .foot { margin-top: 14px; font-size: 11px; color: #8d8aa5; text-align: center; }
+  .empty { color: #8d8aa5; font-size: 12px; padding: 4px 0; }
+</style>
+</head>
+<body>
+  <h1><span><span class="dot">●</span> ThinkTime</span><button id="toggle" class="ghost">Pause</button></h1>
+
+  <label for="addr">Your Monad wallet address</label>
+  <input id="addr" type="text" placeholder="0x…" spellcheck="false" />
+  <div class="row"><button id="save">Save</button></div>
+  <div id="msg" class="msg"></div>
+
+  <div class="stats">
+    <div class="stat"><b id="today">–</b><span>views today</span></div>
+    <div class="stat"><b id="pending">–</b><span>pending MON</span></div>
+    <div class="stat"><b id="paid">–</b><span>paid MON</span></div>
+  </div>
+
+  <h2>Last payouts</h2>
+  <ul id="payouts"><li class="empty">No payouts yet.</li></ul>
+
+  <div class="foot">Your prompts never leave this browser.</div>
+  <script src="popup.js"></script>
+</body>
+</html>
